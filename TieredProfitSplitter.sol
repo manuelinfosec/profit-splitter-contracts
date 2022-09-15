@@ -1,10 +1,10 @@
 pragma solidity ^0.5.0;
 
-// Level 3: DefferedEquity Plan
-contract DefferedEquityPlan {
-    address payable employee_one; // CEO
-    address payable employee_two; // CTO
-    address payable employee_three; // Bob
+// Level 2: Tired Split
+contract TieredProfitSplitter {
+    address payable employee_one; // ceo
+    address payable employee_two; // cto
+    address payable employee_three; // bob
 
     constructor(address payable _one, address payable _two, address payable _three) public {
         employee_one = _one;
@@ -34,7 +34,8 @@ contract DefferedEquityPlan {
         amount = points *15;
         total += amount;
         employee_one.transfer(amount);
-        
+
+
         employee_one.transfer(msg.value - total); // ceo gets the remaining wei
     }
 
